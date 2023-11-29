@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <header>
+            <h1>My Website</h1>
+            <p>Welcome to my awesome website!</p>
+        </header>
+    </div>
+
+    <div id="content">
+        <form id="myForm">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter your first name">
+
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter your last name">
+
+            <label for="Eemail">Email:</label>
+            <input type="text" id="Eemail" name="Eemail" placeholder="Enter your email name">
+
+            <label for="Sstate">State:</label>
+            <input type="text" id="Sstate" name="Sstate" placeholder="Enter your state name">
+
+            <label for="Ddistrict">District:</label>
+            <input type="text" id="Ddistrict" name="Ddistrict" placeholder="Enter your district name">
+
+            <label for="Ppincode">Pincode:</label>
+            <input type="text" id="Ppincode" name="Ppincode" placeholder="Enter your pincode name">
+
+            <label for="Ccontact">Contact:</label>
+            <input type="text" id="Ccontact" name="Ccontact" placeholder="Enter your contact name">
+
+            <input type="submit" value="Submit" onclick="printMessage()">
+        </form>
+    </div>
+
+    <div id="footer">
+        <footer>
+            <p>&copy; 2023 My Website. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function printMessage() {
+            var form = document.getElementById("myForm");
+            var elements = form.elements;
+            var isFormComplete = true;
+
+            for (var i = 0; i < elements.length - 1; i++) {
+                if (elements[i].value === "") {
+                    isFormComplete = false;
+                    break;
+                }
+            }
+
+            if (isFormComplete) {
+                alert("Thank you!");
+            } else {
+                alert("Please fill in all details completely.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
